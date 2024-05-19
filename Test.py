@@ -1,7 +1,7 @@
-from BlockchainDB import *
+from BlockchainDB.BlockchainDB import *
 from OOPEngine import SearchEngine
-from IndexPipeline import IndexPipeline
-from RetrieverPipeline import RetrieverPipeline
+from Pipeline.IndexPipeline import IndexPipeline
+from Pipeline.RetrieverPipeline import RetrieverPipeline
 from haystack.document_stores.in_memory import InMemoryDocumentStore
 
 my_db = ExcelDB("C:\\Users\\Lenovo\\Downloads\\data1.csv")

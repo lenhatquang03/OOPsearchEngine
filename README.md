@@ -21,7 +21,7 @@ For this particular project, the original data (several links of Blockchain arti
 ## 3.2. Indexing Pipeline
 Indexing pipelins prepare our files for search, the main objective is to store the data in the **DocumentStore** with their embedding. <br> As an embedding model, we will use the **sentence-transformers/all-MiniLM-L6-v2** model on HuggingFace.
 
-![Indexing Pipeline](indexing_pipeline.png)
+![Indexing Pipeline](Pipeline/indexing_pipeline.png)
 
 Using the **DocumentSplitter**, we split each Document into small chunks with overlapping words. <br>
 
@@ -31,7 +31,7 @@ Finally, the **DocumentWriter** will write this embedded chunks into a **Documen
 
 ## 3.3. Hybrid Retrieval Pipeline
 
-![Retrieval Pipeline](retrieval_pipeline.png)
+![Retrieval Pipeline](Pipeline/retrieval_pipeline.png)
 
 * **Embedding-based retriever** <br>
 Through the same **sentence-transformers/all-MiniLM-L6-v2** model, we compute the embeddding of the search query. <br> Then the **InMemoryEmbeddingRetriever** will compare the query and Document embeddings (generated from the **Indexing pipeline**) and fetch the Documents **most relevant** to the query from the **DocumentStore** based on the outcome.
